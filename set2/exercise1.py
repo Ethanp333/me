@@ -16,18 +16,18 @@ import platform
 
 # I think this will print "hello! Let's get started" by calling the print function.
 print("hello! Let's get started")  # it printed "hello! Let's get started"
-
+# I think this will print out what does this line do ? removing the qoutations and commmers.
 some_words = ["what", "does", "this", "line", "do", "?"]
-
-for word in some_words:
-    print(word)
-
-for x in some_words:
+#this will print a word in the termanial.
+for word in some_words: # This goes over each element in the 'somewords' list
+    print(word) 
+# x will do the same as some words.
+for x in some_words:# This will also go over the elements in the list for 'somewords'
     print(x)
-
-print(some_words)
-
-if len(some_words) > 3:
+# prints out the sentace in the terminal
+print(some_words) # This line prints the entire 'Somewords list into the terminal.
+# if theres greater then 3 words the terminal will let me know
+if len(some_words) > 3: # This lets me know if the is grater then three works in the 'SomeWords' list
     print("some_words contains more than 3 words")
 
 
