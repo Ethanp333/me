@@ -87,6 +87,8 @@ def loops_1c(number_of_items=5, symbol="#"):
     my_list = []
     for i in range(number_of_items):
         my_list.append(symbol)
+    
+    print(my_list)
     return my_list
 
 
@@ -165,9 +167,11 @@ def loops_3():
     for i in range(10):
         number_row = []
         for j in range(10):
-            number_row.append(i)
+            number_row.append(str(i))
+        
         number_square.append(number_row)
 
+    print (number_square)
     return number_square
 
 def loops_4():
@@ -191,9 +195,9 @@ def loops_4():
     for i in range(10):
         number_row = []
         for j in range(10):
-            number_row.append(j)
+            number_row.append(str(j))
         number_square.append(number_row)
-
+    print(number_square)
     return number_square
 
 
@@ -260,9 +264,10 @@ def loops_6():
     for i in range(10):
         row = []
         for j in range(i+1):
-            row.append(j)
+            row.append(str(j))
         the_wedge.append(row)
     return the_wedge
+
 
 
 
@@ -291,10 +296,11 @@ def loops_7():
     n = 5
     the_pyramid=[]
     for i in range(n):
-        row = ['']*(n-i-1) + ['*']*(2*i+1) + ['']*(n-i-1)
+        row = [' ']*(n-i-1) + ['*']*(2*i+1) + [' ']*(n-i-1)
         the_pyramid.append(row)
+    print(the_pyramid)
     return the_pyramid
-
+    
 
 
 if __name__ == "__main__":

@@ -28,10 +28,59 @@ def advancedGuessingGame():
     Remember to think modular. Try to keep your functions small and single
     purpose if you can!
     """
+def get_valid_number(prompt):
+    """Ask the user for a valid integer and return it."""
+    while True:
+        try:
+            number = int(input(prompt))
+            return number
+        except ValueError:
+            print("That's not a valid number. Please enter a valid integer.")
 
-    return "You got it!"
-    # the tests are looking for the exact string "You got it!". Don't modify that!
+def get_valid_guess(prompt, low, high):
+    """Ask the user for a valid integer within the range and return it."""
+    while True:
+        try:
+            guess = int(input(prompt))
+            if low <= guess <= high:
+                return guess
+            else:
+                print(f"Please enter a number between {low} and {high}.")
+        except ValueError:
+            print("That's not a valid number. Please enter a valid integer.")
+
+def advancedGuessingGame():
+    """Play a guessing game with a user."""
+    print("Welcome to the advanced guessing game!")
+    
+    # Get the lower bound
+    low = get_valid_number("Enter the lower bound: ")
+    
+    # Get the upper bound
+    while True:
+        high = get_valid_number("Enter the upper bound: ")
+        if high > low:
+            break
+        else:
+            print(f"The upper bound must be greater than the lower bound ({low}). Please try again.")
+    
+    print(f"OK then, guess a number between {low} and {high}!")
+
+    # Generate the random number to guess
+    import random
+    target = random.randint(low, high)
+    
+    while True:
+        guess = get_valid_guess("Enter your guess: ", low, high)
+        if guess < target:
+            print("Too low!")
+        elif guess > target:
+            print("Too high!")
+        else:
+            print(f"Congratulations! You've guessed the number {target} correctly!")
+            break
+
+# Example usage:
+advancedGuessingGame()
 
 
-if __name__ == "__main__":
-    print(advancedGuessingGame())
