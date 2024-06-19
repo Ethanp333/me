@@ -19,16 +19,16 @@
     ],
     "version": "10.0.22631",
     "python_build": [
-        "tags/v3.12.3:f6650f9",
-        "Apr  9 2024 14:05:25"
+        "tags/v3.12.4:8e8a4ba",
+        "Jun  6 2024 19:30:16"
     ],
-    "python_compiler": "MSC v.1938 64 bit (AMD64)",
+    "python_compiler": "MSC v.1940 64 bit (AMD64)",
     "python_implementation(": "CPython",
-    "python_version(": "3.12.3",
+    "python_version(": "3.12.4",
     "python_version_tuple": [
         "3",
         "12",
-        "3"
+        "4"
     ],
     "cpu_count": 32
 }

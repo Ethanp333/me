@@ -51,8 +51,8 @@
     "week_number": 1
   },
   {
-    "of_total": 21,
-    "mark": 20,
+    "of_total": 35,
+    "mark": 35,
     "results": [
       {
         "value": 1,
@@ -135,7 +135,63 @@
         "name": "Exercise 2: debug the file"
       },
       {
-        "value": 0,
+        "value": 1,
+        "name": "Exercise 3: is_odd - is 2 odd"
+      },
+      {
+        "value": 1,
+        "name": "Exercise 3: is_odd - is 5 odd"
+      },
+      {
+        "value": 1,
+        "name": "Exercise 3: fix_it - it moves, and it should  move"
+      },
+      {
+        "value": 1,
+        "name": "Exercise 3: fix_it - it moves, and it should not move"
+      },
+      {
+        "value": 1,
+        "name": "Exercise 3: fix_it - it does not move, and it should  move"
+      },
+      {
+        "value": 1,
+        "name": "Exercise 3: fix_it - it does not move, and it should not move"
+      },
+      {
+        "value": 1,
+        "name": "Exercise 3: loops_1a - 1d for loop"
+      },
+      {
+        "value": 1,
+        "name": "Exercise 3: loops_1c - 1d with arguments"
+      },
+      {
+        "value": 1,
+        "name": "Exercise 3: loops_2 - 10\u00d710 stars"
+      },
+      {
+        "value": 1,
+        "name": "Exercise 3: loops_3 - 10 matching lists"
+      },
+      {
+        "value": 1,
+        "name": "Exercise 3: loops_4 - ten rising lists"
+      },
+      {
+        "value": 1,
+        "name": "Exercise 3: loops_5 - write the coords"
+      },
+      {
+        "value": 1,
+        "name": "Exercise 3: loops_6 - make a wedge"
+      },
+      {
+        "value": 1,
+        "name": "Exercise 3: loops_7 - pyramid of stars"
+      },
+      {
+        "value": 1,
         "name": "Lab book entry completed"
       }
     ],
