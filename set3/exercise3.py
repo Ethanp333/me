@@ -28,8 +28,10 @@ def advancedGuessingGame():
     Remember to think modular. Try to keep your functions small and single
     purpose if you can!
     """
+import random
+
 def get_valid_number(prompt):
-    """Ask the user for a valid integer and return it."""
+    """Prompt the user for a valid integer, repeating until one is provided."""
     while True:
         try:
             number = int(input(prompt))
@@ -37,48 +39,50 @@ def get_valid_number(prompt):
         except ValueError:
             print("That's not a valid number. Please enter a valid integer.")
 
-def get_valid_guess(prompt, low, high):
-    """Ask the user for a valid integer within the range and return it."""
+def get_number_within_bounds(prompt, low, high):
+    """Prompt the user for a number within bounds, repeating until one is provided."""
     while True:
-        try:
-            guess = int(input(prompt))
-            if low <= guess <= high:
-                return guess
-            else:
-                print(f"Please enter a number between {low} and {high}.")
-        except ValueError:
-            print("That's not a valid number. Please enter a valid integer.")
+        number = get_valid_number(prompt)
+        if low <= number <= high:
+            return number
+        else:
+            print(f"The number is outside the bounds. Please enter a number between {low} and {high}.")
 
 def advancedGuessingGame():
-    """Play a guessing game with a user."""
-    print("Welcome to the advanced guessing game!")
-    
-    # Get the lower bound
-    low = get_valid_number("Enter the lower bound: ")
-    
-    # Get the upper bound
-    while True:
-        high = get_valid_number("Enter the upper bound: ")
-        if high > low:
-            break
-        else:
-            print(f"The upper bound must be greater than the lower bound ({low}). Please try again.")
-    
-    print(f"OK then, guess a number between {low} and {high}!")
+    """Play a guessing game with the user, allowing custom bounds and handling invalid inputs."""
+    print("\nWelcome to the advanced guessing game!")
 
-    # Generate the random number to guess
-    import random
-    target = random.randint(low, high)
+    # Set the lower bound
+    lower_bound = get_valid_number("Enter the lower bound: ")
     
+    # Ensure the upper bound is greater than the lower bound
     while True:
-        guess = get_valid_guess("Enter your guess: ", low, high)
-        if guess < target:
-            print("Too low!")
-        elif guess > target:
-            print("Too high!")
-        else:
-            print(f"Congratulations! You've guessed the number {target} correctly!")
+        upper_bound = get_valid_number("Enter the upper bound: ")
+        if upper_bound > lower_bound:
             break
+        else:
+            print("The upper bound must be greater than the lower bound. Please try again.")
+
+    print(f"OK then, a number between {lower_bound} and {upper_bound}?")
+
+    actual_number = random.randint(lower_bound, upper_bound)
+    guessed = False
+
+    while not guessed:
+        guessed_number = get_number_within_bounds(f"Guess a number between {lower_bound} and {upper_bound}: ", lower_bound, upper_bound)
+        print(f"You guessed {guessed_number},")
+        if guessed_number == actual_number:
+            print(f"You got it!! It was {actual_number}")
+            guessed = True
+        elif guessed_number < actual_number:
+            print("Too small, try again :'(")
+        else:
+            print("Too big, try again :'(")
+
+    return "You got it!"
+
+if __name__ == "__main__":
+    advancedGuessingGame()
 
 # Example usage:
 advancedGuessingGame()
