@@ -38,9 +38,17 @@ def get_some_details():
          dictionaries.
     """
     json_data = open(LOCAL + "/lazyduck.json").read()
-
     data = json.loads(json_data)
-    return {"lastName": None, "password": None, "postcodePlusID": None}
+
+    result = data["results"][0]
+    last_name = result["name"]["last"]
+    password = result["login"]["password"]
+    postcode = result["location"]["postcode"]
+    id_value = int(result["id"]["value"]) if result ["id"] ["value"] else 0
+
+    postcode_plus_id = postcode + id_value
+
+    return {"lastName": last_name, "password": password, "postcodePlusID": postcode_plus_id}
 
 
 def wordy_pyramid():
@@ -77,7 +85,34 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &wordlength=
     """
+    
+
+    base_url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={length}"
+
+    #{} 
+
     pyramid = []
+    
+    for i in range (3,20,2):
+        url = base_url.format(length=i)
+        r = requests.get(url)
+        if r.status_code == 200:
+            word = r.text
+            pyramid.append(word)
+
+    for i in range (20,3,-2,):
+        url = base_url.format(length=i)
+        r = requests.get(url)
+        if r.status_code == 200:
+            word = r.text
+            pyramid.append(word)
+    print(pyramid)
+
+
+    
+
+
+    
 
     return pyramid
 
@@ -96,13 +131,30 @@ def pokedex(low=1, high=5):
          get very long. If you are accessing a thing often, assign it to a
          variable and then future access will be easier.
     """
-    id = 5
-    url = f"https://pokeapi.co/api/v2/pokemon/{id}"
-    r = requests.get(url)
-    if r.status_code is 200:
-        the_json = json.loads(r.text)
+    tallest_pokemon = None
+    tallest_height = 0
 
-    return {"name": None, "weight": None, "height": None}
+
+    for id in range(low, high+1):
+        url = f"https://pokeapi.co/api/v2/pokemon/{id}"
+        r = requests.get(url)
+        if r.status_code == 200:
+            the_json = json.loads(r.text)
+            name = the_json["name"]
+            height = the_json["height"]
+            weight = the_json["weight"]
+
+            if height > tallest_height:
+                tallest_height = height
+                tallest_pokemon = {
+                    "name": name,
+                    "height": height,
+                    "weight": weight
+                }
+        else:
+            print(f"Failed to retrieve data for pokemon ID {id}")
+        
+    return tallest_pokemon
 
 
 def diarist():
@@ -122,6 +174,20 @@ def diarist():
 
     NOTE: this function doesn't return anything. It has the _side effect_ of modifying the file system
     """
+    filename = 'Trispokedovetiles(laser).gcode'
+    output_file = 'Set4/lasers.pew'
+
+    if not os.path.isfile(filename):
+        print(f"Error: The file '{filename}' was not found")
+        return
+    
+    with open('Trispokedovetiles(laser).gcode', 'rb') as file:
+        gcode = file.read().decode('utf-8').replace('\r\n','\n')
+
+    count = gcode.count('M10 P1')
+
+    with open('Set4/lasers.pew', 'w') as file:
+        file.write(str(count))
     pass
 
 
