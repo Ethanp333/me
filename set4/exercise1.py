@@ -174,21 +174,38 @@ def diarist():
 
     NOTE: this function doesn't return anything. It has the _side effect_ of modifying the file system
     """
-    filename = 'Trispokedovetiles(laser).gcode'
-    output_file = 'Set4/lasers.pew'
+    filename = open("set4\Trispokedovetiles(laser).gcode", "r" )
+    # output_file = 'Set4/lasers.pew'
 
-    if not os.path.isfile(filename):
-        print(f"Error: The file '{filename}' was not found")
-        return
+    data = filename.read()
+    print(data)
     
-    with open('Trispokedovetiles(laser).gcode', 'rb') as file:
-        gcode = file.read().decode('utf-8').replace('\r\n','\n')
+    #.count, .get, .read, .write
+    
+    count = data.count("M10 P1")
+    print(count)
 
-    count = gcode.count('M10 P1')
+    output_filename = "lasers.pew"
+    output_filepaths = 'Set4/lasers.pew'
 
-    with open('Set4/lasers.pew', 'w') as file:
-        file.write(str(count))
+    with open(output_filepaths, "w") as f:
+        f.write(f"{count}")
+    
     pass
+
+
+    # if not os.path.isfile(filename):
+    #     print(f"Error: The file '{filename}' was not found")
+    #     return
+    
+    # with open('Trispokedovetiles(laser).gcode', 'rb') as file:
+    #     gcode = file.read().decode('utf-8').replace('\r\n','\n')
+
+    # count = gcode.count('M10 P1')
+
+    # with open('Set4/lasers.pew', 'w') as file:
+    #     file.write(str(count))
+    # pass
 
 
 if __name__ == "__main__":

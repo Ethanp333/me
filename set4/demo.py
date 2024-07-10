@@ -14,11 +14,11 @@ guard = 0
 
 def hat():
     for i in range(random.randrange(1, 5)):
-        print("🎩")
+        print(" Rabbit🎩")
 
 
 while True and guard < 500:
-    print("snare 🥁")
+    print("moo 🥁")
     hat()
     guard += 1
 
