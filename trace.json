@@ -360,7 +360,7 @@
   "7",
   {
     "of_total": 38,
-    "mark": 10,
+    "mark": 20,
     "results": [
       {
         "value": 1,
@@ -387,44 +387,44 @@
         "name": "\ndictionary_please:\n    given:    * no args *\n    expected: True\n    got:      True"
       },
       {
-        "value": 0,
-        "name": "\nis_it_5:\n    given:    5\n    expected: True\n    got:      None"
+        "value": 1,
+        "name": "\nis_it_5:\n    given:    5\n    expected: True\n    got:      True"
       },
       {
-        "value": 0,
-        "name": "\nis_it_5:\n    given:    4\n    expected: False\n    got:      None"
+        "value": 1,
+        "name": "\nis_it_5:\n    given:    4\n    expected: False\n    got:      False"
       },
       {
-        "value": 0,
-        "name": "\nis_it_5:\n    given:    cats\n    expected: False\n    got:      None"
+        "value": 1,
+        "name": "\nis_it_5:\n    given:    cats\n    expected: False\n    got:      False"
       },
       {
-        "value": 0,
-        "name": "\ntake_five:\n    given:    5\n    expected: 0\n    got:      None"
+        "value": 1,
+        "name": "\ntake_five:\n    given:    5\n    expected: 0\n    got:      0"
       },
       {
-        "value": 0,
-        "name": "\ntake_five:\n    given:    10\n    expected: 5\n    got:      None"
+        "value": 1,
+        "name": "\ntake_five:\n    given:    10\n    expected: 5\n    got:      5"
       },
       {
-        "value": 0,
-        "name": "\ntake_five:\n    given:    0\n    expected: -5\n    got:      None"
+        "value": 1,
+        "name": "\ntake_five:\n    given:    0\n    expected: -5\n    got:      -5"
       },
       {
-        "value": 0,
-        "name": "\ngreet:\n    given:    the Queen\n    expected: Well hello, the Queen\n    got:      None"
+        "value": 1,
+        "name": "\ngreet:\n    given:    the Queen\n    expected: Well hello, the Queen\n    got:      Well hello, the Queen"
       },
       {
-        "value": 0,
-        "name": "\ngreet:\n    given:    Pr\u2642nc\u2640\u2642\n    expected: Well hello, Pr\u2642nc\u2640\u2642\n    got:      None"
+        "value": 1,
+        "name": "\ngreet:\n    given:    Pr\u2642nc\u2640\u2642\n    expected: Well hello, Pr\u2642nc\u2640\u2642\n    got:      Well hello, Pr\u2642nc\u2640\u2642"
       },
       {
-        "value": 0,
-        "name": "\none_counter:\n    given:    [1, 1, 1, 3, 3]\n    expected: 3\n    got:      None"
+        "value": 1,
+        "name": "\none_counter:\n    given:    [1, 1, 1, 3, 3]\n    expected: 3\n    got:      3"
       },
       {
-        "value": 0,
-        "name": "\none_counter:\n    given:    [0, 1, 2, 5, -9]\n    expected: 1\n    got:      None"
+        "value": 1,
+        "name": "\none_counter:\n    given:    [0, 1, 2, 5, -9]\n    expected: 1\n    got:      1"
       },
       {
         "value": 0,
