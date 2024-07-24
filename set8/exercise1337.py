@@ -290,10 +290,31 @@ def fast_filler(number_of_words=200) -> str:
     If you get this one to work, you are a Very Good Programmer™!
     """
 
+
     fname = "dict_cache.json"
 
-    return None
 
+    if os.path.exists(fname):
+        with open(fname, "r") as file:
+            word_dict = json.load(file)
+            word_dict = {int(k): v for k, v in word_dict.items()}
+    else:
+        word_dict = make_filler_text_dictionary()
+        with open(fname, "w") as file:
+            json.dump(word_dict, file)
+
+    words = []
+    for _ in range(number_of_words):
+        word_length = random.randint(3, 7)
+        word = random.choice(word_dict[word_length])
+        words.append(word)
+
+    paragraph = " ".join(words)
+    paragraph = paragraph.capitalize() + "."
+    
+    return paragraph
+
+print(fast_filler(200))
 
 if __name__ == "__main__":
     print("give_me_five", give_me_five(), type(give_me_five()))

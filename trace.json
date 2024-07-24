@@ -360,7 +360,7 @@
   "7",
   {
     "of_total": 38,
-    "mark": 35,
+    "mark": 38,
     "results": [
       {
         "value": 1,
@@ -499,16 +499,16 @@
         "name": "\nrandom_filler_text:\n    given:    1000\n    expected: True\n    got:      True"
       },
       {
-        "value": 0,
-        "name": "\nfast_filler:\n    given:    [100]\n    expected: True\n    got:      'NoneType' object has no attribute 'split'"
+        "value": 1,
+        "name": "\nfast_filler:\n    given:    100\n    expected: True\n    got:      True"
       },
       {
-        "value": 0,
-        "name": "\nfast_filler:\n    given:    [10]\n    expected: True\n    got:      'str' object is not callable"
+        "value": 1,
+        "name": "\nfast_filler:\n    given:    10\n    expected: True\n    got:      True"
       },
       {
-        "value": 0,
-        "name": "\nfast_filler:\n    given:    [10]\n    expected: True\n    got:      'str' object is not callable"
+        "value": 1,
+        "name": "\nfast_filler:\n    given:    10\n    expected: True\n    got:      True"
       },
       {
         "value": 1,
