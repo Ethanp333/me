@@ -151,8 +151,25 @@ def the_chain_gang_5(the_value) -> bool:
     TIP: you've already written a function that subtracts 5
     """
 
-    return 
+def take_five(some_number) -> int:
+    """Subtracts 5 from some_number."""
+    return some_number - 5
 
+def is_it_5(some_number) -> bool:
+    """Returns True if the argument passed is 5, otherwise returns False."""
+    return some_number == 5
+
+def the_chain_gang_5(the_value) -> bool:
+    """Take the_value, subtract 5 from it, and return True if the value we end up with it 5.
+
+    You don't get anything for free this far into the quiz, you can't
+    use the == operator or the - operator, and you must use two of the
+    functions you've already written.
+
+    TIP: you've already written a function that returns True if the value is 5
+    TIP: you've already written a function that subtracts 5
+    """
+    return is_it_5(take_five(the_value))
 
 def pet_filter(letter="a") -> list:
     """Return a list of pets whose name contains the character 'letter'"""
@@ -168,7 +185,7 @@ def pet_filter(letter="a") -> list:
         "fancy rat and lab rat", "mink", "red fox", "hedgehog", "guppy"
     ]
     # fmt: on
-    filtered = []
+    filtered = [pet for pet in pets if letter in pet]
 
     return filtered
 
@@ -185,9 +202,15 @@ def best_letter_for_pets() -> str:
 
     the_alphabet = string.ascii_lowercase
     most_popular_letter = ""
+    max_count = 0
+
+    for letter in the_alphabet:
+        pet_list = pet_filter(letter)
+        if len(pet_list) > max_count:
+            max_count = len(pet_list)
+            most_popular_letter = letter
 
     return most_popular_letter
-
 
 def make_filler_text_dictionary() -> dict:
     """Make a dictionary of random words filler text.
@@ -216,9 +239,17 @@ def make_filler_text_dictionary() -> dict:
 
     url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength="
     wd = {}
+    for length in range(3, 8):
+        word_list = []
+        for _ in range(4):
+            response = requests.get(url + str(length))
+            if response.status_code == 200:
+                word_list.append(response.text)
+            else:
+                print(f"Failed to retrieve word of length {length}")
+        wd[length] = word_list
 
     return wd
-
 
 def random_filler_text(number_of_words=200) -> str:
     """Make a paragraph of random filler text.
@@ -231,9 +262,14 @@ def random_filler_text(number_of_words=200) -> str:
         e.g. random.randint(low, high)
     """
 
+
     my_dict = make_filler_text_dictionary()
 
     words = []
+    for _ in range(number_of_words):
+        word_length = random.randint(3, 7)
+        word = random.choice(my_dict[word_length])
+        words.append(word)
 
     return " ".join(words)
 
