@@ -151,7 +151,7 @@ def the_chain_gang_5(the_value) -> bool:
     TIP: you've already written a function that subtracts 5
     """
 
-    return None
+    return 
 
 
 def pet_filter(letter="a") -> list:
