@@ -86,7 +86,7 @@ def n_counter(search_for_this, input_list=[1, 4, 1, 5, 1, 1]) -> int:
     """Count the number of times search_for_this shows up in the input_list.
     Return an integer.
     """
-    count = None
+    count = input_list.count(search_for_this)
 
     return count
 
@@ -111,6 +111,15 @@ def fizz_buzz() -> list:
     """
     fizz_buzz_list = []
     # your code here
+    for i in range(1, 101):
+        if i % 3 == 0 and i % 5 == 0:
+            fizz_buzz_list.append("FizzBuzz")
+        elif i % 3 == 0:
+            fizz_buzz_list.append("Fizz")
+        elif i % 5 == 0:
+            fizz_buzz_list.append("Buzz")
+        else:
+            fizz_buzz_list.append(i)
 
     return fizz_buzz_list
 
@@ -127,7 +136,8 @@ def set_it_on_fire(input_string="very naughty boy") -> str:
     TIP: make sure that you have a 🔥 on both ends of the string.
     """
 
-    return None
+    interleaved_string = "🔥" + "🔥".join(input_string.upper()) + "🔥"
+    return interleaved_string
 
 
 def the_chain_gang_5(the_value) -> bool:
