@@ -1,1 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+This week, I made significant progress by uncovering numerous correlations within my dataset on baseball players' statistics. As I delved deeper into the data, patterns began to emerge that highlighted interesting relationships between various performance metrics. These correlations have provided valuable insights and will be key in developing a more detailed analysis moving forward. My work with Pandas visuals continues to be essential in visualizing these connections clearly and effectively.

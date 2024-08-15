@@ -1,1 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+This week, I had productive discussions with my tutors about my dataset, which led to some better ideas for my project. After analysing the datasets I initially found, I realized that a few of them wouldn’t work as well as I had hoped. As a result, I decided to explore other options in the coming weeks to find datasets that are more suitable and interesting. In addition to refining my dataset choices, I started experimenting with different types of graphs to visualize the data in the tutorial.
