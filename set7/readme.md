@@ -1,1 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+This week, I decided to go with a dataset based on baseball players' statistics after considering several options. This dataset seemed to offer the most interesting insights for my project. Alongside this, I started learning how to code maps, which has given me new ideas for how to visually present the data, especially in terms of geographic performance. This experience with graphing and mapping has provided valuable tools that will be useful in the next steps of my analysis.
